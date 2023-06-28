@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Wanna change something?</h1>
+<form action="{{ url_for('update') }}" method="post">
+    <input type="hidden" name="bangmem_id" value="{{ bio.id }}">
+    <label for="p_type">Type of Pet:</label>
+    <select name="bang_mem" id="p_type" required>
+        <option disabled selected value>...</option>
+        {% if bio.line_type == "maknae" %}
+        <option value="maknae" selected>Hyung</option>
+        <option value="hyung">Hyung</option>
+        {% elif bio.line_type == "hyung" %}
+        <option value="maknae">Maknae</option>
+        <option value="hyung" selected>Hyung</option>
+        {% endif %}
+    </select><br><br>
+    <label for="p_name">Name of Member:</label>
+    <input type="text" name="bang_fname" id="p_name" value="{{ pet.name }}" required><br><br>
+    <label for="p_breed">Breed:</label>
+    <input type="text" name="pet_breed" id="p_breed" value="{{ pet.breed }}"><br><br>
+    <label for="p_age">Age:</label>
+    <input type="number" name="pet_age" id="p_age" value="{{ pet.age }}"><br><br>
+    <label for="p_url">Image URL:</label>
+    <input type="url" name="pet_url" id="p_url" value="{{ pet.url }}"><br>
+    <textarea name="pet_desc" cols="30" rows="10">{{ pet.description }}</textarea><br>
+    <input type="submit" value="Update!">
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Wanna join BTS?</h1>
+<p>Enter your details down</p>
+<form action="{{ url_for('processing') }}" method="post">
+    <label for="p_type">Are you a Maknae or Hyung?</label>
+    <select name="bang_mem" id="bts_type" required>
+        <option disabled selected value>...</option>
+        <option value="maknae">Maknae</option>
+        <option value="hyung">Hyung</option>
+    </select><br><br>
+    <label for="bang_fname">Your name:</label>
+    <input type="text" name="bang_fname" id="bang_fname" required><br><br>
+    <label for="bang_sname">Stage name:</label>
+    <input type="text" name="bang_sname" id="bang_sname"><br><br>
+    <label for="bang_bdate">Birthday:</label>
+    <input type="number" name="bang_bdate" id="bang_bdate"><br><br>
+    <label for="bang_position">Position:</label>
+    <input type="text" name="bang_position" id="bang_position"><br><br>
+    <label for="bang_picurl">Image URL:</label>
+    <input type="url" name="bang_picurl" id="bang_picurl"><br>
+    <textarea name="pet_desc" placeholder="Tell us about yourself :)" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Let's go!">
+</form>
+{% endblock %}

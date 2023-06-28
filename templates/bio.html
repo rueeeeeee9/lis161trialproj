@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ bio.fname }}</h1>
+    <p>Stage Name: {{ bio.sname }}</p>
+    <p>Birthday: {{ bio.bdate }}</p>
+    <p>Position: {{ bio.position }}</p>
+    <img src="{{ bio.picurl }}" alt="Member Image">
+{% endblock %}

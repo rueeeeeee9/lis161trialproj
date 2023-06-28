@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>List of {{ bang_mem }}</h1>
+
+<ul>
+    {% for member in members %}
+    <li><a href="/members/{{ member.id }}">{{ member.fname }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

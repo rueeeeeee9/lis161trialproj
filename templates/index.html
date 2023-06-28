@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bangtan!</title>
+</head>
+
+<body>
+    <ul>
+        <h1>BANGTAN SONYEONDAN MEMBERS</h1>
+        <li><a href ="/members/hyung{{ bangmem_id }}">HYUNG</a></li>
+        <li><a href ="/members/maknae{{ bangmem_id }}">MAKNAE</a></li>
+        </ul>
+</body>
+</html>
+{% endblock %}
