@@ -10,7 +10,7 @@ def index():
 @app.route('/members/<bang_mem>')
 def members(bang_mem):
     membio_list = read_mems_by_mem_type(bang_mem)
-    return render_template("members.html", bang_mem=bang_mem, membio=membio_list)
+    return render_template("members.html", bang_mem=bang_mem, members=membio_list)
 
 @app.route('/members/<int:bangmem_id>')
 def members_id(bangmem_id):
